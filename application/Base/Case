@@ -1,0 +1,50 @@
+#include <functional>
+#include <memory>
+#include <complex>
+#include <chrono>
+
+#include "MatrixTools.h"
+#include "vector3d.h"
+#include "Types.h"
+#include "MemSegmentBC.h"
+#include "MemSegment.h"
+#include "PolyFit.h"
+#include "Impedance.h"
+#include "FTFSource.h"
+
+#include "BC.h"
+#include "PhysicsBC.h"
+
+#include "FieldBase.h"
+#include "FieldSimple.h"
+
+#include "CalcuBase.h"
+#include "CalcuVolumeGrad.h"
+
+// #ifdef CFDSolver
+    #include "EqSolver.h"
+// #endif
+
+#include "Flux.h"
+
+#include "DiscreteBase.h"
+#include "DiscreteSource.h"
+#include "DiscreteLaplacian.h"
+#include "DiscreteGrad.h"
+
+
+#include "EquationBase.h"
+
+
+#include "CaseBase.h"
+
+// 
+
+#include "EquationHelmholtz.h"
+#include "CaseHelmholtz.h"
+
+#include "EquationHelmholtzModal.h"
+#include "CaseHelmholtzModal.h"
+
+#include "EquationHelmholtzConfigDef.h"
+#include "CaseHelmholtzConfigDef.h"

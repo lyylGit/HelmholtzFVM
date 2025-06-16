@@ -1,0 +1,119 @@
+{
+	"//": "该问题计算域为长方体，固壁",
+
+	"//": "===============算例名称",
+	"casename": "rect_norm_poly_hex",
+
+	"//": "===============计算类型：HelmFreq:频域扫频计算计算,HelmTime:时域计算，HelmModal：模态求解计算;暂不支持LEE等",
+	"casetype": "HelmFreq",
+
+	"//": "================数据类型，暂支持double，因为解析msh二进制文件时只考虑了double",
+	"tcase": "double",
+
+	"//": "================网格文件名",
+	"meshfile": "your/path/HelmholtzFVM/Case/rect_norm_poly_hex_22ml_25k.msh",
+
+	"//": "================网格文件类型 fluent_txt ，fluent_bin",
+	"meshfiletype": "fluent_txt",
+
+	"//": "================网格中数据单位转化为m时需要乘以的倍数",
+	"mm": 1e-3,
+
+	"//": "================输出路径",
+	"outpath": "your/path/HelmholtzFVM/Case/Result",
+
+	"//": "================输出路径清理？",
+	"outpathclean": false,
+
+	"//": "================拟合用频率，fromFreq,toFreq,deltaFreq",
+	"freqrange": [
+		10,
+		1150,
+		5
+	],
+	
+	"//": "================HelmModal：特征值求解器FEAST配置",
+	"HelmModal": {
+		"output": 1,
+		"err": 6,
+		"criteria": 0,	
+		"M0": 60,
+		"it": 0
+	},
+	"//": "================HelmFreq：频域求解器配置",
+	"HelmFreq": {
+		"source": [
+			{
+				"type": "point",
+				"pos": [
+					0.1,
+					0.2,
+					0.2
+				],
+				"q": 1e3
+			}
+		],
+		"output": [
+			{
+				"filename": "mic.txt",
+				"mic": [
+					0.9,
+					0.2,
+					0.2
+				],
+				"value": "dB"
+			}
+		]
+	},
+	"//": "================脚本定义中用的变量,$p 来引用",
+	"param": [
+		{
+			"name": "rho_0",
+			"value": 1.225,
+			"memo": "密度"
+		},
+		{
+			"name": "c0",
+			"value": 340,
+			"memo": "声速"
+		},
+		{
+			"$Hz": "================保留，表示计算中引用系统中的频率"
+		}
+	],
+	"//": "================定义标量场",
+	"fields": [
+		{
+			"name": "rho",
+			"type": "uniform",
+			"value": "$rho_0"
+		},
+		{
+			"name": "p0",
+			"type": "uniform",
+			"value": 1e5
+		},
+		{
+			"name": "gamma",
+			"type": "uniform",
+			"value": 1.44
+		}
+	],
+	"bcs": [
+		{
+			"type": "Gradient",
+			"//": "================梯度为0+0i，固壁",
+			"grad": [
+				0,
+				0
+			]
+		}
+	],
+	"//": "================方程变量,uniform：均匀介质，field：输入密度场",
+	"equations": [
+		{
+			"name": "HelmholtzEq"
+		}
+	],
+	"version": 0.1
+}

@@ -1,0 +1,14 @@
+#include <memory>
+#include <iomanip>
+#include <map>
+#include "vector3d.h"
+#include "publicFun.h"
+#include "staticFunctions.h"
+#include "Types.h"
+
+#include "BC.h"
+#include "PhysicsBC.h"
+
+#include "Cell.h"
+
+#include "Mesh3.h"
