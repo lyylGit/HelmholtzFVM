@@ -18,7 +18,8 @@
 
 ## 1. 核心功能
 求解频域亥姆霍兹方程：
-$$	\nabla\left ( \frac{1}{\rho_{0}} \nabla \hat{p}(x,\omega)\right ) +\frac{\omega ^2}{\gamma p_{0}}\hat{p}(x,\omega)=0$$  
+
+	$$ \nabla\left ( \frac{1}{\rho_{0}} \nabla \hat{p}(x,\omega)\right ) +\frac{\omega ^2}{\gamma p_{0}}\hat{p}(x,\omega)=0 $$
 
 - 实现**频率相关阻抗边界条件**（声衬/共振腔等）  
 - 输出声压场、模态分布
@@ -164,6 +165,8 @@ run: all
 	@echo Executing 'run: all' complete!
 ```
 
+---
+
 ## 3 测试算例
 
 矩形管道固壁边界条件：
@@ -183,6 +186,8 @@ run: all
 ```bash
 ./YOUR/PATH/HelmholtzFVM /YOUR/PATH/Case/test_fdi_bc.json
 ```
+
+---
 
 ## 4 程序I/O规范
 
