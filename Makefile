@@ -8,7 +8,7 @@ CXXFLAGS	:= -std=c++20   -fopenmp -w -g
 LFLAGS = -lfeast -lgfortran -lgomp -lpthread -lm -lmkl_rt -lmetis -lGKlib -lmuparserx
 
 # define output directory
-OUTPUT	:= output
+OUTPUT	:= /your/path/
 
 # define source directory
 SRC		:= application 
@@ -32,8 +32,8 @@ INCLUDE	+= src/User/ByConfigDef
 INCLUDE	+= $(MKLROOT)/include
 INCLUDE	+= $(FEASTROOT)/include
 
-INCLUDE	+= your/path/local/include 
-INCLUDE	+= your/path/METIS/build/xinclude  
+INCLUDE	+= /your/path/local/include 
+INCLUDE	+= /your/path/METIS/build/xinclude  
 INCLUDE	+= /usr/local/include/nlohmann
 INCLUDE	+= /usr/local/include/muparserx
 
@@ -44,7 +44,7 @@ INCLUDE	+= /usr/include/eigen3/
 LIB := lib \
 		$(MKLROOT)/lib/intel64 \
 		$(FEASTROOT)/lib/x64 \
-		your/path/local/lib \
+		/your/path/local/lib \
 		/usr/local/lib \
 #LIB += ../muparserx/build
 
