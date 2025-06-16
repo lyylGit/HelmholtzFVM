@@ -21,10 +21,9 @@
 
 	$$ \nabla\left ( \frac{1}{\rho_{0}} \nabla \hat{p}(x,\omega)\right ) +\frac{\omega ^2}{\gamma p_{0}}\hat{p}(x,\omega)=0 $$
 
-- 实现**频率相关阻抗边界条件**（声衬/共振腔等）  
+- **频率相关阻抗边界条件**（声衬/共振腔等）声学模态求解  
 - 输出声压场、模态分布
-- 网格类型支持 fluent mesh 文本格式与二进制格式
-- 支持Fluent Meshing生成的三角形、多面体、以及六面体-多面体混合网格。
+- 网格类型支持 fluent mesh 文本格式与二进制格式; 支持Fluent Meshing生成的三角形、多面体、以及六面体-多面体混合网格。
 
 ---
 
